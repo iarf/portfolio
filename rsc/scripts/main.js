@@ -28,7 +28,7 @@ function setup() {
 
 		let queue;
 		for (const [key, value] of Object.entries(waypoints)) {
-			if (location > value.waypoint - 50) {
+			if (location > value.waypoint - 70) {
 				queue = value.nav;
 			}
 		}
