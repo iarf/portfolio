@@ -228,7 +228,7 @@ section p {
   font-style: normal;
   position: relative;
   display: inline-block;
-  height: 15em;
+  min-height: 15em;
 }
 #contact address footer {
   position: absolute;
