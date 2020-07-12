@@ -1,0 +1,283 @@
+// variables:
+$background-primary: #fafafa
+$background-secondary: #fefefe
+$background-dark: #595959
+$background-muted:#f0f0f0
+$background-secondary-alt: #e0e0e0
+$text-primary:  #242424
+$text-secondary: #424242
+$text-muted: #828282
+$text-light: #fefefe
+$breakpoint-xl: 1200px
+$breakpoint-lg: 992px
+$breakpoint-md: 768px
+$breakpoint-sm: 576px
+
+*
+	margin: 0
+	padding: 0
+	font-family: 'Titillium Web', sans-serif
+	scroll-behavior: smooth
+
+body
+	background: $background-primary
+
+#container
+	width: 100%
+	margin: auto
+	background: $background-secondary
+	box-shadow: 0 0 10px -8px black
+
+header
+	background: $background-secondary
+	box-shadow: 0 4px 5px -7px black
+	height: 6em
+	position: sticky
+	top: -2.2em
+	z-index: 1
+	p
+		display: none
+		position: absolute
+		bottom: .2em
+		right: 2em
+		font-size: 1.8em
+	nav
+		display: inline
+		position: absolute
+		bottom: .4em
+		a
+			color: $text-muted
+			font-size: 1.6em
+			text-decoration: none
+			&:hover
+				color: $text-secondary
+			&.active
+				color: $text-primary
+		li
+			margin-left: 1em
+		li,ul
+			display: inline
+section
+	padding: 1em
+	h3
+		font-size: 1.7em
+		font-weight: lighter
+		padding-bottom: .5em
+		padding-left: 0em
+		color: $text-secondary
+		span
+			letter-spacing: .18em
+	h2
+		font-size: 2em
+		font-weight: normal
+		padding-bottom: .5em
+		padding-left: 0em
+
+		span
+			letter-spacing: .2em
+	p
+		font-size: 1.2em
+		padding-bottom: 1em
+#experience
+	background: $background-muted
+	article
+		font-size: 1.2em
+		padding-bottom: 2em
+		ul
+			li
+				list-style-type: none
+				color: $text-secondary
+				&::before
+					content: "- "
+
+#about
+	min-height: 40vh
+	padding-top: 6em
+	margin-top: -6em
+	display: flex
+	flex-wrap: wrap
+	.about-about
+		text-align: left
+		width: 100%
+
+	.about-skills
+		display: inline-block
+		width: 100%
+		ul
+			display: flex
+			flex-flow: row wrap
+			li
+				list-style-type: none
+				margin: 1em
+				padding: .2em 1em .2em 1em
+				display: inline-block
+				background: $background-secondary-alt
+				border-radius: .15em
+				border: 1px $text-muted solid
+	p
+		color: $text-secondary
+	strong
+		color: $text-primary
+#projects
+	a
+		color: inherit
+		text-decoration: none
+	padding: 1em
+	background: $background-secondary-alt
+	.project-box
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: center
+		align-items: flex-start
+		align-content: flex-start
+
+	.project-card
+		background: $background-secondary
+		border: 1px solid $text-muted
+		border-radius: .2em
+		font-size: .8em
+		min-width: 12em
+		max-width: 15em
+		margin: 1em
+		margin-top: 2em
+		padding: 1em 2em
+		padding-bottom: 3em
+		position: relative
+		transition: all .3s ease-in-out
+		&::before
+			background: rgba(0,0,0,0)
+			transition: all .3s ease-in-out
+			content: ""
+		&:hover
+			transform: scale(1.1)
+			&::after
+				content: "View source (GitHub)"
+				color: $text-light
+				padding: 0
+				position: absolute
+				top: calc(50% - 2em)
+				margin: auto
+				font-size: 2em
+				text-align: center
+				font-weight: bold
+				text-decoration: underline
+			&::before
+				background: rgba(50,50,50,.7)
+				width: 100%
+				height: 100%
+				display: inline-block
+				position: absolute
+				bottom: 0
+				left: 0
+		p
+			color: $text-secondary
+		.buttons			
+			position: absolute
+			width: 100%
+			left: 0
+			text-align: center
+			bottom: 0
+			button
+				width: calc(50% - 1px)
+				height: 2.8em
+				border: 0
+				margin: 0 -1px 0 -1px
+				outline: 0
+				background: $background-muted
+				color: $text-secondary
+				font-size: 1.1em
+				transition: .2s ease-in-out all
+
+				&:hover
+					background: $background-secondary
+					cursor: pointer
+		h3
+			font-size: 1.4em
+			padding-bottom: .8em
+			font-weight: normal
+		img
+			width: 100%
+#contact
+	address
+		font-style: normal
+		position: relative
+		display: inline-block
+		height: 15em
+		footer
+			position: absolute
+			bottom: 0
+	.contactsection	
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: center
+		align-items: flex-start
+	form.contact
+		margin-left: 3em
+		display: inline-block
+		width: 100%
+		max-width: 24em
+		height: 18em
+		.submit
+			max-width: 10em
+			float: right
+		input,textarea
+			font-size: 1em
+			display: block
+			width: calc(100% - .2em)
+			border: 1px solid $text-muted
+			padding: .2em
+			padding-right: 0
+			border-radius: 4px
+			margin-bottom: .5em
+			resize: none
+
+.text-muted
+	color: $text-muted
+
+@media (min-width: $breakpoint-md)
+	#experience
+		article
+			padding-left: 3em
+			padding-right: 2em
+	section
+		h2
+			padding-left: 2em
+		h3
+			padding-left: 0
+	#about
+		.about-about
+			width: 70%
+			p
+				padding-left: 3em
+				margin-right: 2em
+		.about-skills
+			width: 30%
+	.contactsection
+		address
+			max-width: 40%
+	#container
+		max-width: 720px
+	header
+		nav
+			left: 2em
+		p
+			display: inline
+footer
+	padding: 0em 1em 0em 1em
+	.links
+		float: right
+@media (min-width: $breakpoint-lg)
+	#container
+		max-width: 992px
+	#about
+		padding-top: 8em
+		.about-image
+			width: 40%
+			display: inline
+		.about-info
+			padding-left: 4em
+			position: relative
+			max-width: 60%
+			display: inline-block
