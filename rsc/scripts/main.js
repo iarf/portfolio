@@ -53,7 +53,7 @@ function setup() {
 
 function submitToAPI(e) {
 	e.preventDefault();
-	var URL = "https://gtxn8rp1e7.execute-api.us-east-2.amazonaws.com/";
+	var URL = "https://j15ebwpera.execute-api.us-east-2.amazonaws.com/live/contact";
 
 	var name = $("#name-input").val();
 	var email = $("#email-input").val();
